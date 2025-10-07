@@ -20,8 +20,15 @@ def read_data(file_location):
             dataset.append(str(line.strip()).lower())
     return dataset
 
+
+
+
+
+
+
+
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
+    if len(sys.argv) < 3:
         print("Usage: python filtering.py <file_location> <similarity_threshold>")
         sys.exit(1)
     file_location = sys.argv[1]

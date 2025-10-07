@@ -34,6 +34,13 @@ def finding_neighbors():
     print("first shingling")
     print("then minhashing")
     print("then LSH")
+    common_movies = set(user1.keys()) & set(user2.keys())
+    if not common_movies:
+        return 0
+    num = sum(user1[m]*user2[m] for m in common_movies)
+    den1 = sum(user1[m]**2 for m in common_movies)**0.5
+    den2 = sum(user2[m]**2 for m in common_movies)**0.5
+    return num / (den1*den2) if den1 and den2 else 0
 
 def similarity_computation():
     print("Similarity computation algorithm")

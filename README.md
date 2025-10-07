@@ -15,7 +15,7 @@ The objective of this programming assignment is to be able to implement a system
 ## Installation and Usage
 
 1. Download and extract the ZIP file.  
-2. Open terminal and run:  **filtering.py train_ratings.csv 0.05**   
+2. Open terminal and run:  **python3 filtering.py train_ratings.csv 0.05**   
 
 ## Screenshots
 

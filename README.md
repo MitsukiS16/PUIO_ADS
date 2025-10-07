@@ -1,4 +1,4 @@
-# Revenge Maze
+# Filtering Algorithm
 
 ## Project Overview
 

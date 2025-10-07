@@ -38,9 +38,27 @@ def similarity_computation():
 def predict_ratings():
     print("Predict ratings algorithm")
 
-def output():
-    print("top 5 recommendations")
 
+recommendations = [
+        (0, 12, 4.5),
+        (1, 34, 3.9),
+        (2, 56, 4.2),
+        (3, 45, 3.8),
+        (4, 75, 2.8),
+        (5, 18, 1.4),
+    ]
+
+
+
+def output(recommendations):
+    for user_id, movie_id, predicted_rating in recommendations:
+        print(f"{user_id} {movie_id} {predicted_rating:.2f}")
+
+def topN_output(n, recommendations):
+    print("top recommendations")
+    top = sorted(recommendations, key=lambda x: x[2], reverse=True)[:n]
+    for user_id, movie_id, predicted_rating in top:
+        print(f"{user_id} {movie_id} {predicted_rating:.2f}")
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
@@ -48,4 +66,4 @@ if __name__ == "__main__":
         sys.exit(1)
     file_location = sys.argv[1]
     dataset = read_data(file_location)
-    print(len(dataset))
+    topN_output(3, recommendations)

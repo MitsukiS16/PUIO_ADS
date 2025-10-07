@@ -1,18 +1,8 @@
 # Algorithms for Data Science -- Project
 
-import urllib.request
-import itertools
-from itertools import combinations
-import random
-import math
 import sys
-from string import ascii_lowercase
-from datetime import datetime
-import numpy as np
-import re
-import string
 import csv
-
+from collections import defaultdict
 
 def read_data(file_location):
     dataset = []
@@ -30,8 +20,10 @@ def read_data(file_location):
 
 
 def preprocess_data(dataset):
-    print("Preprocessing data")
-
+    user_ratings = defaultdict(dict)  
+    for user_id, movie_id, rating in dataset:
+        user_ratings[user_id][movie_id] = rating
+    return user_ratings
 
 def collaborative_filtering():
     print("Collaborative filtering algorithm")
